@@ -13,7 +13,7 @@ function Box() {
   return (
     <>
       
-          <Card title={<Form />} bordered={false} style={{ width: 700, height: "50%" }}>
+          <Card title={<Form />} bordered={false} style={{ width: 700, height: 400 }}>
             i am too bad <NumberEmoji score={-0.9} />
           </Card>
         
