@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Card } from 'antd';
 import axios from 'axios';
 
@@ -12,15 +12,19 @@ import './Box.css';
 
 function Box() {
   const [text, setText] = useState('');
-  const [score, setScore] = useState();
+  const [score, setScore] = useState(555);
 
+  const mounted = useRef(false);
   useEffect(() => {
-    async function fetchData() {
-      const respond = await axios.post('http://127.0.0.1:8000', {text: text})
-      setScore(respond.data.result.compound)
-      console.log(respond.data.result.compound)
+    if (!mounted.current) {
+      mounted.current = true;
+    } else {
+      async function fetchData() {
+        const respond = await axios.post('http://127.0.0.1:8000', { text: text })
+        setScore(respond.data.result.compound)
+      }
+      fetchData();
     }
-    fetchData();
   }, [text]);
 
   return (
