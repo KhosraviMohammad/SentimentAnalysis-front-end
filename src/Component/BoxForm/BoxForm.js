@@ -32,7 +32,7 @@ function BoxForm(props) {
             >
 
                 <Form.Item name={'text'} wrapperCol={{ ...layout.wrapperCol }} rules={[{ required: true }, { min: 4, max:500 }]}>
-                    <Input.TextArea rows={4} value={text} />
+                    <Input.TextArea rows={5} value={text} />
                 </Form.Item>
                 <Form.Item wrapperCol={{ ...layout.wrapperCol }}>
                     <Button type="primary" htmlType="submit" block>
