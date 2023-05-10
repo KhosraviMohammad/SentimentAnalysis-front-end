@@ -20,19 +20,19 @@ const onFinish = (values, handleSubmit) => {
 };
 
 function BoxForm(props) {
-    const { handleSubmit } = props
+    const { handleSubmit, text } = props
     return (
         <div>
             <Form
                 {...layout}
                 name="nest-messages"
-                onFinish={(values) => onFinish(values, handleSubmit)}
+                onFinish={(values) => onFinish(values.text, handleSubmit)}
                 validateMessages={validateMessages}
                 className='Form-margin-top Form-margin-bottom'
             >
 
                 <Form.Item name={'text'} wrapperCol={{ ...layout.wrapperCol }} rules={[{ required: true }, { min: 4 }]}>
-                    <Input.TextArea rows={4} />
+                    <Input.TextArea rows={4} value={text} />
                 </Form.Item>
                 <Form.Item wrapperCol={{ ...layout.wrapperCol }}>
                     <Button type="primary" htmlType="submit" block>
