@@ -31,7 +31,7 @@ function BoxForm(props) {
                 className='Form-margin-top Form-margin-bottom'
             >
 
-                <Form.Item name={'text'} wrapperCol={{ ...layout.wrapperCol }} rules={[{ required: true }, { min: 4 }]}>
+                <Form.Item name={'text'} wrapperCol={{ ...layout.wrapperCol }} rules={[{ required: true }, { min: 4, max:500 }]}>
                     <Input.TextArea rows={4} value={text} />
                 </Form.Item>
                 <Form.Item wrapperCol={{ ...layout.wrapperCol }}>
