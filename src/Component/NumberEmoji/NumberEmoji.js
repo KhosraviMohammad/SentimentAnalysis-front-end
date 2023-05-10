@@ -3,9 +3,9 @@ import React from 'react';
 function NumberEmoji(props) {
     const score = props.score;
     let emoji;
-    if (score <= 1 && score > 0.8) {
+    if (score <= 1 && score > 0.75) {
         emoji = '🤣'
-    }else if (score <= 0.8 && score > 0.5) {
+    }else if (score <= 0.75 && score > 0.5) {
         emoji = '😂'
     } else if (score <= 0.5 && score >= 0.2) {
         emoji = '😅';
@@ -17,9 +17,9 @@ function NumberEmoji(props) {
         emoji = '🙁';
     }else if (score < -0.2 && score >= -0.5) {
         emoji = '😔';
-    }else if (score < -0.5 && score >= -0.8) {
+    }else if (score < -0.5 && score >= -0.75) {
         emoji = '😢';
-    }else if (score < -0.8 && score >= -1) {
+    }else if (score < -0.75 && score >= -1) {
         emoji = '😭';
     }
 
